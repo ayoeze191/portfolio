@@ -4,6 +4,7 @@ import me from "./assets/images/output.webp";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import Fade from "./components/Fade";
+import FaqBackground from "./components/FaqBackground";
 
 const Hero = () => {
   const { theme, setTheme } = useTheme();
@@ -11,20 +12,21 @@ const Hero = () => {
   return (
     <section
       id="About"
-      className="py-[85px] px-[20px] min-h-screen"
+      className="py-[85px] px-[20px] min-h-screen md:min-h-fit relative"
       style={{
-        backgroundColor: theme === "dark" ? "#1f2937" : "#f3f4f6",
+        backgroundColor: "#1f2937",
 
-        color: theme === "dark" ? "#e5e7eb" : "#99a1af",
+        color: "#e5e7eb",
       }}
     >
+      <FaqBackground />
       <div className="flex justify-between max-w-7xl mx-auto items-center gap-20">
         <div>
           <Fade delay={0.005} inView>
             <h2
               className="text-[30px] md:text-[50px] "
               style={{
-                color: theme === "dark" ? "#e5e7eb" : "#1f2937",
+                color: "#e5e7eb",
               }}
             >
               Hello, I&apos;m <span className="font-bold ">Ezekiel</span>
@@ -51,7 +53,7 @@ const Hero = () => {
                   href="/Ezekiel's Cv.pdf"
                   className="z-[1] relative cursor-pointer h-full w-full"
                   style={{
-                    color: theme === "dark" ? "#e5e7eb" : "#1f2937",
+                    color: "#e5e7eb",
                   }}
                 >
                   View My Resume

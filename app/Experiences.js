@@ -51,16 +51,14 @@ const Experiences = () => {
       id="Experience"
       className="py-[40px] md:py-[85px] px-[20px] min-h-screen"
       style={{
-        backgroundColor: theme.theme === "dark" ? "" : "white",
-        color: theme.theme === "dark" ? "#e5e7eb" : "#111827",
+        backgroundColor: "",
+        color: "#e5e7eb",
       }}
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
         <Fade delay={0.005} inView>
           <h2
-            className={`${
-              theme.theme == "dark" ? "text-white" : "text-gray-800"
-            } text-[20px] md:text-[30px] font-bold mx-auto`}
+            className={`${"text-white"} text-[20px] md:text-[30px] font-bold mx-auto`}
           >
             Professional <span className="text-indigo-600"> Experience</span>
           </h2>
@@ -99,15 +97,9 @@ const Experience = ({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex-1 ${
-          theme.theme == "dark" ? "bg-[#1F2937]" : "bg-grey-800"
-        }  p-6 md:p-8 rounded-lg text-[13px] md:text-[15px] shadow-lg  transform transition-transform duration-300 hover:scale-105`}
+        className={`flex-1 ${"bg-[#1F2937]"}  p-6 md:p-8 rounded-lg text-[13px] md:text-[15px] shadow-lg  transform transition-transform duration-300 hover:scale-105`}
       >
-        <p
-          className={`${
-            theme.theme == "dark" ? "text-white" : "text-gray-900"
-          }  font-semibold mb-3 md:mb-4`}
-        >
+        <p className={`${"text-white"}  font-semibold mb-3 md:mb-4`}>
           {work}
           <span className="text-indigo-500">{" " + company}</span>
         </p>

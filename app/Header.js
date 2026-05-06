@@ -25,7 +25,7 @@ const Header = () => {
       {
         rootMargin: "-50% 0px -50% 0px", // trigger when section center is in view
         threshold: 0.1,
-      }
+      },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -53,7 +53,7 @@ const Header = () => {
       className={`  fixed top-0 flex left-0 w-full z-50 transition-all duration-300 shadow ${
         isScrolled ? "h-16" : "h-18"
       }
-       ${theme == "dark" ? "bg-[#111827]" : "bg-white "}
+       ${"bg-[#111827]"} 
       
       `}
     >
@@ -62,7 +62,7 @@ const Header = () => {
         <div
           className="text-[14px] md:text-[20px]"
           style={{
-            color: theme == "dark" ? "" : "hsl(222.2 84% 4.9%)",
+            color: "",
           }}
         >
           &lt;Eazy/&gt;
@@ -115,7 +115,7 @@ const Header = () => {
             />
           )}
         </button>
-        <button
+        {/* <button
           className="text-[20px] cursor-pointer"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
@@ -138,7 +138,7 @@ const Header = () => {
               <FaMoon fontSize={20} color="black" />
             </motion.span>
           )}
-        </button>
+        </button> */}
       </div>
     </div>
   );
@@ -159,11 +159,7 @@ const Navitem = ({ text, mode, active }) => {
       onClick={handleClick}
       className="hover:text-[#3730A3] cursor-pointer hover:underline"
       style={{
-        color: active
-          ? "#3730A3"
-          : mode === "dark"
-          ? "white"
-          : "hsl(222.2 84% 4.9%)",
+        color: active ? "#3730A3" : "white",
         textUnderlineOffset: "10px",
         fontWeight: active ? "bold" : "normal",
         transform: active ? "scale(1.1)" : "scale(1)",

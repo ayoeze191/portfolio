@@ -159,14 +159,12 @@ function Projects() {
       id="Projects"
       className="py-[40px] md:py-[85px] px-[20px] min-h-screen "
       style={{
-        backgroundColor: theme === "dark" ? "" : "white",
+        backgroundColor: "",
       }}
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-[20px] md:gap-[40px] items-center">
         <h2
-          className={`${
-            theme == "dark" ? "text-white" : "text-gray-800"
-          } text-[20px] md:text-[30px] font-bold mx-auto`}
+          className={`${"text-white"} text-[20px] md:text-[30px] font-bold mx-auto`}
         >
           Live <span className="text-indigo-600">Projects</span>
         </h2>
@@ -217,11 +215,7 @@ function Projects() {
                     }}
                     transition={{ duration: 0.2 }}
                   >
-                    <p
-                      className={`text-[18px] font-medium ${
-                        theme !== "dark" ? "text-black" : ""
-                      }`}
-                    >
+                    <p className={`text-[18px] text-[#6B7280] font-medium`}>
                       {item.title}
                     </p>
                   </motion.div>
@@ -316,11 +310,7 @@ const Project = ({ img, stacks, link, github, title, description }) => {
         />
       </div>
       <div className="px-6 py-4 overflow-auto backdrop-blur-sm">
-        <h2
-          className={`font-bold ${
-            theme !== "dark" && "text-black"
-          } text-xl mb-2 transition-colors duration-300`}
-        >
+        <h2 className={`font-bold text-xl mb-2 transition-colors duration-300`}>
           {title || "Project Title"}
         </h2>
         <p className="text-gray-500 text-base transition-colors duration-300 text-[13px] md:text-[15px]">
