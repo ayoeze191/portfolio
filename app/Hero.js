@@ -21,7 +21,7 @@ const Hero = () => {
       <SpaceBackground />
       <FaqBackground />
       <div className="flex justify-between max-w-7xl mx-auto items-center gap-20">
-        <div>
+        <div className="w-full md:w-fit">
           <h2
             className="text-[30px] md:text-[50px] font-medium flex flex-wrap"
             style={{ color: "#e5e7eb" }}
