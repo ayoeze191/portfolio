@@ -81,7 +81,7 @@ const Hero = () => {
             </div>
           </Fade>
         </div>
-        <Fade delay={0.1} inView>
+        <Fade delay={0.1} inView className="relative hidden lg:block">
           <motion.div
             className="relative hidden lg:block w-[400px] h-[400px]"
             animate={{
