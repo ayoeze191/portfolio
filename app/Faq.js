@@ -60,7 +60,9 @@ const Question = ({ question, answer }) => {
         onClick={() => setOpen(!open)}
         className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-[#374151] transition-colors duration-200"
       >
-        <h3 className="text-lg font-semibold text-white pr-4">{question}</h3>
+        <h3 className="text-[14px] md:text-[18px] font-semibold text-white pr-4">
+          {question}
+        </h3>
 
         {/* Rotate icon when open */}
         <FaAngleDown
