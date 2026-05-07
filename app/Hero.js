@@ -82,23 +82,31 @@ const Hero = () => {
           </Fade>
         </div>
         <Fade delay={0.1} inView>
-          <div className="relative hidden lg:block">
+          <motion.div
+            className="relative hidden lg:block w-[400px] h-[400px]"
+            animate={{
+              y: [0, -12, 0],
+              rotate: [-1, 1, -1],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            {/* outer glow */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#6366f1] to-transparent blur-3xl opacity-30 scale-125" />
+
+            {/* ring frame (like spacecraft window) */}
+            <div className="absolute inset-0 rounded-full border border-[#6366f1]/40 scale-110" />
+
             <Image
               src={me}
-              alt=""
-              className="w-full h-full relative z-20 rounded-full"
+              alt="Ezekiel"
+              className="relative z-10 rounded-full object-cover w-[400px] h-[400px]"
             />
-            <div className="w-[100%] -left-5 bg-white h-full absolute top-5 rounded-full"></div>
-          </div>
+          </motion.div>
         </Fade>
-        {/* <div className="relative">
-          <Image
-            src={me}
-            alt=""
-            className="w-full h-full relative z-20 "
-          />
-          <div className="w-[90%] -left-5 bg-white h-full absolute top-5 "></div>
-        </div> */}
       </div>
     </section>
   );
