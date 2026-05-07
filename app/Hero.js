@@ -7,14 +7,12 @@ import Fade from "./components/Fade";
 import FaqBackground from "./components/FaqBackground";
 
 const Hero = () => {
-  const { theme, setTheme } = useTheme();
-
   return (
     <section
       id="About"
       className="py-[85px] px-[20px] min-h-screen md:min-h-fit relative"
       style={{
-        backgroundColor: "#1f2937",
+        // backgroundColor: "#1f2937",
 
         color: "#e5e7eb",
       }}
