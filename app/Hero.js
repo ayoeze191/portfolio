@@ -2,11 +2,13 @@
 import React from "react";
 import me from "./assets/images/output.webp";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 import Fade from "./components/Fade";
+import SpaceBackground from "./components/SpaceBackground";
 import FaqBackground from "./components/FaqBackground";
-
+import { motion } from "motion/react";
 const Hero = () => {
+  const text = "Hello, I’m Ezekiel";
+
   return (
     <section
       id="About"
@@ -16,19 +18,39 @@ const Hero = () => {
         color: "#e5e7eb",
       }}
     >
+      <SpaceBackground />
       <FaqBackground />
       <div className="flex justify-between max-w-7xl mx-auto items-center gap-20">
         <div>
-          <Fade delay={0.005} inView>
-            <h2
-              className="text-[30px] md:text-[50px] "
-              style={{
-                color: "#e5e7eb",
-              }}
-            >
-              Hello, I&apos;m <span className="font-bold ">Ezekiel</span>
-            </h2>
-          </Fade>
+          <h2
+            className="text-[30px] md:text-[50px] font-medium flex flex-wrap"
+            style={{ color: "#e5e7eb" }}
+          >
+            {text.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: [0, 1, 1, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  times: [0, 0.2, 0.8, 1],
+                  delay: index * 0.15,
+                  repeat: Infinity,
+                  repeatDelay: 1,
+                  ease: "easeInOut",
+                }}
+                className={`inline-block ${
+                  text.slice(index).startsWith("Ezekiel") && char !== " "
+                    ? "font-bold"
+                    : ""
+                }`}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </h2>
           <Fade delay={0.1} inView>
             <p className="text-[14px] md:text-[18px]  mt-8">
               I&apos;m a Software Engineer with a strong foundation in both web
@@ -59,15 +81,16 @@ const Hero = () => {
             </div>
           </Fade>
         </div>
-
-        <div className="relative hidden lg:block">
-          <Image
-            src={me}
-            alt=""
-            className="w-full h-full relative z-20 rounded-full"
-          />
-          <div className="w-[100%] -left-5 bg-white h-full absolute top-5 rounded-full"></div>
-        </div>
+        <Fade delay={0.1} inView>
+          <div className="relative hidden lg:block">
+            <Image
+              src={me}
+              alt=""
+              className="w-full h-full relative z-20 rounded-full"
+            />
+            <div className="w-[100%] -left-5 bg-white h-full absolute top-5 rounded-full"></div>
+          </div>
+        </Fade>
         {/* <div className="relative">
           <Image
             src={me}
